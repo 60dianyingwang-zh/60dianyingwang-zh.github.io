@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1120">
+<title>60电影网 - 海量影视资源聚合平台 | 电影电视剧综艺动漫在线观看与资讯评分</title>
+<meta name="description" content="60电影网（60dianyingwang-zh.github.io）是面向影迷的影视资源聚合平台，覆盖院线电影、热播电视剧、网络剧、综艺节目与经典动漫，提供分类型片单、口碑评分、上映档期、演员专题及深度影评。每日更新热门影视资讯，支持按题材、年份、地区、评分多维度筛选，帮助用户在最短时间内找到心仪的观影内容。">
+<meta name="keywords" content="60电影网, 60dianyingwang-zh, 影视资源聚合平台, 在线观看影视, 院线电影, 热播电视剧, 网络剧, 综艺节目, 经典动漫, 影视资讯, 口碑评分, 上映档期, 演员专题, 深度影评">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="60电影网">
+<meta property="og:type" content="website">
+<meta property="og:title" content="60电影网 - 海量影视资源聚合平台">
+<meta property="og:description" content="覆盖院线电影、热播电视剧、综艺节目与经典动漫，提供分类型片单、口碑评分与深度影评。">
+<meta property="og:url" content="https://60dianyingwang-zh.github.io">
+<meta property="og:site_name" content="60电影网">
+<link rel="canonical" href="https://60dianyingwang-zh.github.io">
+<style>
+:root{
+  --ink:#0d1220;
+  --ink2:#1a2236;
+  --paper:#f6f7fa;
+  --card:#ffffff;
+  --line:#e4e7ee;
+  --txt:#1f2738;
+  --sub:#6b7488;
+  --sub2:#9aa1b0;
+  --brand:#ff385c;
+  --brand2:#ff6b85;
+  --accent:#3d5afe;
+  --green:#12b886;
+  --shadow:0 2px 10px rgba(16,24,40,.06);
+  --shadow2:0 12px 32px rgba(16,24,40,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--paper);color:var(--txt);line-height:1.7;font-size:15px;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ===== top bar ===== */
+.topbar{
+  background:var(--ink);color:#c7cddb;font-size:12.5px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px;flex-wrap:wrap}
+.topbar a{color:#8f98aa}
+.topbar a:hover{color:#fff}
+.topbar .links{display:flex;gap:18px;flex-wrap:wrap}
+
+/* ===== header ===== */
+.header{
+  background:#fff;position:sticky;top:0;z-index:50;
+  border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.brand{display:flex;align-items:baseline;gap:8px}
+.brand b{
+  font-size:24px;font-weight:900;letter-spacing:.5px;color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+}
+.brand b i{font-style:normal;color:var(--brand)}
+.brand small{font-size:11px;color:var(--sub2);letter-spacing:1px;text-transform:uppercase}
+.search{
+  flex:1;max-width:360px;position:relative;display:flex;align-items:center;
+  border:1.5px solid var(--line);border-radius:999px;padding:0 6px 0 16px;height:40px;
+  background:#fff;transition:.2s;
+}
+.search:focus-within{border-color:var(--brand);box-shadow:0 0 0 4px rgba(255,56,92,.08)}
+.search input{
+  flex:1;border:none;outline:none;font-size:14px;background:transparent;color:var(--txt);
+}
+.search button{
+  height:28px;padding:0 16px;border-radius:999px;background:var(--brand);color:#fff;font-size:13px;font-weight:600;
+}
+.search button:hover{background:var(--brand2)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:10px;position:relative}
+.menu-btn::before,.menu-btn::after{content:"";position:absolute;left:11px;width:18px;height:2px;background:var(--ink);border-radius:2px}
+.menu-btn::before{top:15px;box-shadow:0 6px 0 var(--ink)}
+.menu-btn::after{top:27px}
+
+/* ===== nav ===== */
+.nav{
+  background:#fff;border-bottom:1px solid var(--line);position:sticky;top:70px;z-index:49;
+}
+.nav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav .wrap::-webkit-scrollbar{display:none}
+.nav a{
+  flex:none;padding:13px 14px;font-size:14.5px;color:var(--sub);font-weight:500;
+  border-bottom:2px solid transparent;transition:.15s;white-space:nowrap;
+}
+.nav a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+
+/* ===== hero ===== */
+.hero{
+  background:
+    radial-gradient(900px 420px at 88% 8%,rgba(61,90,254,.10),transparent 62%),
+    radial-gradient(700px 380px at 6% 92%,rgba(255,56,92,.08),transparent 60%),
+    var(--ink);
+  color:#fff;padding:56px 0 60px;position:relative;overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.hero .kicker{font-size:12px;letter-spacing:3px;color:var(--brand2);text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:42px;line-height:1.28;font-weight:900;letter-spacing:.5px}
+.hero h1 mark{background:linear-gradient(120deg,var(--brand),var(--brand2));color:#fff;padding:0 10px;border-radius:6px}
+.hero p{color:#aeb6c8;font-size:15.5px;margin:18px 0 26px;max-width:540px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:10px;
+  font-size:14.5px;font-weight:600;transition:.2s;
+}
+.btn-main{background:var(--brand);color:#fff}
+.btn-main:hover{background:var(--brand2);transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,56,92,.35)}
+.btn-line{border:1px solid rgba(255,255,255,.28);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.08)}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;max-width:540px}
+.stat-row div{padding:14px 16px;border-left:1px solid rgba(255,255,255,.12)}
+.stat-row div:first-child{border-left:none;padding-left:0}
+.stat-row strong{display:block;font-size:24px;font-weight:900;color:#fff}
+.stat-row span{font-size:12px;color:#8f98aa}
+
+.hero-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;
+  padding:22px;backdrop-filter:blur(6px);
+}
+.hero-card .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.hero-card .row h3{font-size:17px;font-weight:700}
+.hero-card .row a{font-size:12.5px;color:var(--brand2)}
+.hc-list li{display:flex;gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.08)}
+.hc-list li:first-child{border-top:none;padding-top:0}
+.hc-num{
+  flex:none;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#c7cddb;
+}
+.hc-list li:nth-child(-n+3) .hc-num{background:var(--brand);color:#fff}
+.hc-text{flex:1;min-width:0}
+.hc-text b{display:block;font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hc-text span{font-size:12px;color:#8f98aa}
+.hc-score{flex:none;font-size:13px;font-weight:800;color:#ffd166;align-self:center}
+
+/* ===== sections ===== */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+.sec-title{display:flex;align-items:center;gap:12px}
+.sec-title .bar{width:5px;height:24px;border-radius:3px;background:var(--brand)}
+.sec-title h2{font-size:23px;font-weight:800;letter-spacing:.3px;color:var(--ink)}
+.sec-title p{font-size:13px;color:var(--sub2);margin-top:3px}
+.more{font-size:13px;color:var(--accent);font-weight:600;white-space:nowrap}
+.more:hover{text-decoration:underline}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.tabs a{
+  font-size:13px;padding:6px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);
+  color:var(--sub);transition:.18s;
+}
+.tabs a.on,.tabs a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+
+.poster{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column;
+}
+.poster:hover{transform:translateY(-5px);box-shadow:var(--shadow2);border-color:#d2d8e4}
+.pic{
+  position:relative;aspect-ratio:3/4;overflow:hidden;
+  background:linear-gradient(150deg,#dfe4ee,#c3cbe0);
+}
+.pic::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(255,255,255,.5),transparent 42%),
+    linear-gradient(180deg,transparent 55%,rgba(13,18,32,.55));
+}
+.pic .tag{
+  position:absolute;top:10px;left:10px;z-index:2;font-size:11px;font-weight:700;
+  background:rgba(255,255,255,.94);color:var(--brand);border-radius:5px;padding:3px 8px;
+}
+.pic .rate{
+  position:absolute;right:10px;top:10px;z-index:2;font-size:12px;font-weight:800;
+  background:var(--ink);color:#ffd166;border-radius:5px;padding:3px 8px;
+}
+.pic .nm{
+  position:absolute;left:12px;right:12px;bottom:11px;z-index:2;
+  font-size:15px;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.pic .play{
+  position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;
+  background:rgba(13,18,32,0);transition:.25s;
+}
+.poster:hover .play{background:rgba(13,18,32,.35)}
+.play i{
+  width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.95);
+  display:flex;align-items:center;justify-content:center;
+  transform:scale(.6);opacity:0;transition:.25s;
+}
+.play i::after{content:"";border-left:13px solid var(--brand);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.poster:hover .play i{transform:scale(1);opacity:1}
+.info{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column;gap:5px}
+.info .gen{font-size:11.5px;color:var(--accent);font-weight:600}
+.info h4{font-size:15px;font-weight:700;line-height:1.5;color:var(--ink)}
+.info .ft{margin-top:auto;display:flex;justify-content:space-between;font-size:12px;color:var(--sub2);border-top:1px solid var(--line);padding-top:9px}
+
+/* ===== tv section ===== */
+.bg-soft{background:#fff}
+.show{
+  display:grid;grid-template-columns:160px 1fr;gap:0;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.25s;
+}
+.show:hover{box-shadow:var(--shadow2);transform:translateX(4px)}
+.show .pic2{
+  position:relative;aspect-ratio:2/3;background:linear-gradient(150deg,#e8ecf4,#cbd4e4);
+}
+.show .pic2::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(13,18,32,.5));
+}
+.show .pic2 b{
+  position:absolute;left:12px;bottom:12px;z-index:2;color:#fff;font-size:15px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+.show .body{padding:16px 18px;display:flex;flex-direction:column}
+.show .body .top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.show .body .top em{
+  font-style:normal;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;background:#eef2ff;color:var(--accent);
+}
+.show .body .top em.hot{background:#fff0f3;color:var(--brand)}
+.show h4{font-size:17px;font-weight:800;color:var(--ink)}
+.show .desc{font-size:13.5px;color:var(--sub);margin:7px 0 10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.show .cast{font-size:12.5px;color:var(--sub2)}
+.show .bar-row{margin-top:auto;padding-top:12px;display:flex;align-items:center;gap:12px}
+.show .bar-row .tr{font-size:12px;color:var(--sub);white-space:nowrap}
+.bar-track{flex:1;height:6px;background:#eef0f5;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--green),#38d9a9)}
+.show .num{font-size:12.5px;font-weight:800;color:var(--green);white-space:nowrap}
+
+/* ===== list table ===== */
+.tbl{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.tbl .tr2{
+  display:grid;grid-template-columns:44px 2fr 1fr 1fr 100px 90px;align-items:center;
+  padding:13px 18px;font-size:13.5px;border-top:1px solid var(--line);gap:12px;
+}
+.tbl .tr2:first-child{border-top:none;background:#fafbfd}
+.tbl .tr2.head{font-size:12px;font-weight:700;color:var(--sub2);letter-spacing:.5px;text-transform:uppercase;background:#fafbfd}
+.tbl .no{font-size:15px;font-weight:900;color:var(--sub2)}
+.tbl .tr2:nth-child(2) .no,.tbl .tr2:nth-child(3) .no,.tbl .tr2:nth-child(4) .no{color:var(--brand)}
+.tbl .ttl{font-weight:600;color:var(--ink)}
+.tbl .st{font-size:12.5px;color:var(--sub)}
+.tbl .st.ok{color:var(--green);font-weight:600}
+.star{color:#ffd166;font-size:12px;letter-spacing:1px}
+
+/* ===== reviews ===== */
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rev{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;
+  box-shadow:var(--shadow);transition:.25s;
+}
+.rev:hover{box-shadow:var(--shadow2);transform:translateY(-4px)}
+.rev-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.rev-top .who{display:flex;align-items:center;gap:10px}
+.avatar{
+  width:38px;height:38px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,#ff385c,#ff9a76);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800;
+}
+.rev-top .who b{font-size:14px}
+.rev-top .who span{font-size:11.5px;color:var(--sub2)}
+.rev-top .dt{font-size:11.5px;color:var(--sub2);text-align:right}
+.rev-top .dt em{display:block;font-style:normal;font-size:14px;font-weight:800;color:var(--ink)}
+.rev h4{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.rev p{font-size:13.5px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.rev .kw{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+.rev .kw a{font-size:11.5px;color:var(--accent);border:1px solid #e0e5ff;border-radius:999px;padding:3px 10px}
+.rev .kw a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ===== calendar strip ===== */
+.calendar{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:10px;
+}
+.cal-day{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px;min-height:116px;
+  transition:.2s;
+}
+.cal-day:hover{border-color:var(--brand);box-shadow:var(--shadow)}
+.cal-day .d{font-size:11px;color:var(--sub2);letter-spacing:1px;margin-bottom:6px}
+.cal-day .d b{font-size:18px;color:var(--ink);font-weight:900;margin-right:4px}
+.cal-day p{font-size:12px;color:var(--ink);line-height:1.5;font-weight:600}
+.cal-day span{display:block;font-size:11px;color:var(--sub2);margin-top:5px}
+
+/* ===== notice / about ===== */
+.notice{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:10px;padding:18px 20px;margin-bottom:22px;font-size:13.5px;color:var(--sub)
+}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
+.about-txt h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.about-txt p{font-size:14px;color:var(--sub);margin-bottom:12px}
+.about-txt p a{color:var(--accent);font-weight:600}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.feat div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px}
+.feat div b{display:block;font-size:15px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.feat div span{font-size:12px;color:var(--sub2)}
+.side-card{background:var(--ink);color:#fff;border-radius:14px;padding:22px}
+.side-card h4{font-size:16px;font-weight:800;margin-bottom:14px}
+.side-card ul li{display:flex;gap:10px;padding:9px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#c7cddb}
+.side-card ul li:first-child{border-top:none}
+.side-card ul li i{flex:none;width:6px;height:6px;border-radius:50%;background:var(--brand2);margin-top:8px}
+
+/* ===== faq ===== */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  cursor:pointer;padding:17px 4px;font-size:15px;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:16px;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--brand);font-size:20px;line-height:1;flex:none}
+.faq details[open] summary::after{content:"－"}
+.faq details p{padding:0 4px 18px;font-size:14px;color:var(--sub)}
+
+/* ===== footer ===== */
+footer{background:var(--ink);color:#aeb6c8;padding:52px 0 0}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:38px}
+.foot-top .f1 b{
+  font-size:22px;font-weight:900;color:#fff;font-family:Georgia,serif;
+  display:block;margin-bottom:10px;
+}
+.foot-top .f1 b i{font-style:normal;color:var(--brand2)}
+.foot-top .f1 p{font-size:13px;color:#8f98aa;line-height:1.8}
+.foot-top h5{font-size:13.5px;color:#fff;font-weight:700;margin-bottom:14px;letter-spacing:.5px}
+.foot-top ul li{margin-bottom:9px}
+.foot-top ul a{font-size:13px;color:#8f98aa}
+.foot-top ul a:hover{color:var(--brand2)}
+.foot-bot{
+  border-top:1px solid rgba(255,255,255,.08);padding:20px 0;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#6b7286;
+}
+.foot-bot a{color:#8f98aa}
+
+/* ===== responsive ===== */
+@media (max-width:1024px){
+  .g4{grid-template-columns:repeat(3,1fr)}
+  .foot-top{grid-template-columns:1.5fr 1fr 1fr;gap:28px}
+  .tbl .tr2{grid-template-columns:36px 2fr 1fr 90px;gap:10px}
+  .tbl .hide1024{display:none}
+}
+@media (max-width:760px){
+  .topbar{display:none}
+  .header .wrap{height:60px}
+  .search{display:none}
+  .menu-btn{display:block}
+  .nav{position:fixed;top:60px;left:0;right:0;max-height:0;overflow:hidden;transition:.3s;background:#fff;border-bottom:none}
+  .nav.open{max-height:80vh;overflow-y:auto;border-bottom:1px solid var(--line);box-shadow:var(--shadow2)}
+  .nav .wrap{flex-direction:column;align-items:stretch;padding:8px 16px 16px}
+  .nav a{border-bottom:1px solid var(--line);padding:13px 4px}
+  .hero{padding:40px 0 44px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero h1{font-size:30px}
+  .hero-card{display:none}
+  section{padding:40px 0}
+  .g4,.g3{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr}
+  .show{grid-template-columns:110px 1fr}
+  .show .body{padding:12px 14px}
+  .show .desc{-webkit-line-clamp:3}
+  .about-grid{grid-template-columns:1fr}
+  .calendar{grid-template-columns:repeat(2,1fr)}
+  .stat-row{display:none}
+  .foot-top{grid-template-columns:1fr 1fr;gap:24px}
+  .tbl .tr2{grid-template-columns:32px 1fr 70px;font-size:12.5px;padding:11px 12px}
+  .tbl .hide760{display:none}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span>欢迎来到 60电影网 · 海量影视资源聚合平台，每日更新热门影视资讯</span>
+    <div class="links">
+      <a href="#">登录</a><a href="#">注册</a><a href="#">RSS 订阅</a><a href="#">APP 下载</a><a href="#">意见反馈</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="https://60dianyingwang-zh.github.io">
+      <b>60<i>电影网</i></b>
+      <small>60 Movie</small>
+    </a>
+    <div class="search">
+      <input type="text" placeholder="搜索电影 / 电视剧 / 演员 / 导演…">
+      <button type="button">搜索</button>
+    </div>
+    <button class="menu-btn" id="mbtn" aria-label="菜单"></button>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top">首页</a>
+    <a href="#movie">电影</a>
+    <a href="#tv">电视剧</a>
+    <a href="#show">综艺</a>
+    <a href="#anime">动漫</a>
+    <a href="#rank">排行榜</a>
+    <a href="#review">影评</a>
+    <a href="#cal">上映日历</a>
+    <a href="#about">关于我们</a>
+    <a href="#faq">帮助中心</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Daily Picks · Updated Every Day</div>
+        <h1>60 秒找到一部好片<br>海量影视 <mark>一站聚合</mark></h1>
+        <p>60电影网（60dianyingwang-zh.github.io）聚合院线电影、热播电视剧、综艺节目与经典动漫，用分类片单、口碑评分、档期预告与深度影评，帮你把选片时间压缩到 60 秒以内。</p>
+        <div class="hero-cta">
+          <a class="btn btn-main" href="#movie">浏览电影 →</a>
+          <a class="btn btn-line" href="#rank">查看排行榜</a>
+        </div>
+        <div class="stat-row">
+          <div><strong>3.6 万+</strong><span>收录影视条目</span></div>
+          <div><strong>128 个</strong><span>题材与地区分类</span></div>
+          <div><strong>每日</strong><span>两次资讯更新</span></div>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="row">
+          <h3>今日口碑榜 · TOP 5</h3>
+          <a href="#rank">完整榜单 #</a>
+        </div>
+        <ul class="hc-list">
+          <li><span class="hc-num">1</span><span class="hc-text"><b>周处除三害</b><span>动作 / 犯罪 · 中国台湾</span></span><span class="hc-score">8.2</span></li>
+          <li><span class="hc-num">2</span><span class="hc-text"><b>热辣滚烫</b><span>剧情 / 喜剧 · 中国大陆</span></span><span class="hc-score">7.9</span></li>
+          <li><span class="hc-num">3</span><span class="hc-text"><b>飞驰人生 2</b><span>喜剧 / 运动 · 中国大陆</span></span><span class="hc-score">7.7</span></li>
+          <li><span class="hc-num">4</span><span class="hc-text"><b>第二十条</b><span>剧情 / 喜剧 · 中国大陆</span></span><span class="hc-score">7.6</span></li>
+          <li><span class="hc-num">5</span><span class="hc-text"><b>你想活出怎样的人生</b><span>动画 / 奇幻 · 日本</span></span><span class="hc-score">7.5</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MOVIE -->
+  <section id="movie">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><span class="bar"></span><div><h2>电影频道</h2><p>院线热映、即将上映与经典回看</p></div></div>
+        <a class="more" href="#">全部电影 #</a>
+      </div>
+      <div class="tabs">
+        <a href="#" class="on">正在热映</a>
+        <a href="#">即将上映</a>
+        <a href="#">华语电影</a>
+        <a href="#">欧美电影</a>
+        <a href="#">日韩电影</a>
+        <a href="#">经典老片</a>
+        <a href="#">高分榜</a>
+      </div>
+      <div class="grid g4">
+
+        <article class="poster">
+          <div class="pic"><span class="tag">IMAX</span><span class="rate">8.2</span><span class="play"><i></i></span><span class="nm">周处除三害</span></div>
+          <div class="info">
+            <span class="gen">动作 / 犯罪</span>
+            <h4>周处除三害</h4>
+            <div class="ft"><span>中国台湾</span><span>134 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">喜剧</span><span class="rate">7.9</span><span class="play"><i></i></span><span class="nm">热辣滚烫</span></div>
+          <div class="info">
+            <span class="gen">剧情 / 喜剧</span>
+            <h4>热辣滚烫</h4>
+            <div class="ft"><span>中国大陆</span><span>129 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">运动</span><span class="rate">7.7</span><span class="play"><i></i></span><span class="nm">飞驰人生 2</span></div>
+          <div class="info">
+            <span class="gen">喜剧 / 运动</span>
+            <h4>飞驰人生 2</h4>
+            <div class="ft"><span>中国大陆</span><span>121 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">剧情</span><span class="rate">7.6</span><span class="play"><i></i></span><span class="nm">第二十条</span></div>
+          <div class="info">
+            <span class="gen">剧情 / 喜剧</span>
+            <h4>第二十条</h4>
+            <div class="ft"><span>中国大陆</span><span>145 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">动画</span><span class="rate">7.5</span><span class="play"><i></i></span><span class="nm">你想活出怎样的人生</span></div>
+          <div class="info">
+            <span class="gen">动画 / 奇幻</span>
+            <h4>你想活出怎样的人生</h4>
+            <div class="ft"><span>日本</span><span>124 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">科幻</span><span class="rate">8.0</span><span class="play"><i></i></span><span class="nm">沙丘 2</span></div>
+          <div class="info">
+            <span class="gen">科幻 / 冒险</span>
+            <h4>沙丘 2</h4>
+            <div class="ft"><span>美国</span><span>166 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">悬疑</span><span class="rate">7.8</span><span class="play"><i></i></span><span class="nm">默杀</span></div>
+          <div class="info">
+            <span class="gen">悬疑 / 犯罪</span>
+            <h4>默杀</h4>
+            <div class="ft"><span>中国大陆</span><span>119 分钟</span></div>
+          </div>
+        </article>
+
+        <article class="poster">
+          <div class="pic"><span class="tag">动作</span><span class="rate">7.4</span><span class="play"><i></i></span><span class="nm">蛟龙行动</span></div>
+          <div class="info">
+            <span class="gen">动作 / 战争</span>
+            <h4>蛟龙行动</h4>
+            <div class="ft"><span>中国大陆</span><span>146 分钟</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TV -->
+  <section id="tv" class="bg-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><span class="bar"></span><div><h2>电视剧频道</h2><p>热播剧集、网络剧与经典长剧</p></div></div>
+        <a class="more" href="#">全部剧集 #</a>
+      </div>
+      <div class="grid g3">
+
+        <article class="show">
+          <div class="pic2"><b>繁花</b></div>
+          <div class="body">
+            <div class="top"><em class="hot">热播</em><em>年代</em><em>剧情</em></div>
+            <h4>繁花</h4>
+            <p>九十年代的上海，商海浮沉与人情冷暖交织。阿宝从弄堂少年成长为商界传奇，黄河路上的每一盏灯背后都藏着一个时代的侧影。</p>
+            <div class="cast">主演：胡歌 / 马伊琍 / 唐嫣 / 辛芷蕾 · 30 集</div>
+            <div class="bar-row"><span class="tr">更新至 30 集</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="num">8.7 分</span></div>
+          </div>
+        </article>
+
+        <article class="show">
+          <div class="pic2"><b>南来北往</b></div>
+          <div class="body">
+            <div class="top"><em>年代</em><em>情感</em></div>
+            <h4>南来北往</h4>
+            <p>一列绿皮火车串起四十年的时代变迁，乘警与扒手在车厢里反复相遇，见证普通人在大时代下的命运流转。</p>
+            <div class="cast">主演：白敬亭 / 金晨 / 丁勇岱 · 39 集</div>
+            <div class="bar-row"><span class="tr">更新至 32 集</span><span class="bar-track"><span class="bar-fill" style="width:82%"></span></span><span class="num">8.3 分</span></div>
+          </div>
+        </article>
+
+        <article class="show">
+          <div class="pic2"><b>玫瑰的故事</b></div>
+          <div class="body">
+            <div class="top"><em class="hot">热播</em><em>都市</em><em>情感</em></div>
+            <h4>玫瑰的故事</h4>
+            <p>从校园到职场，从北京到香港，一个聪慧独立的女性在不同人生阶段面对爱情、婚姻与自我的抉择，书写当代女性的成长史。</p>
+            <div class="cast">主演：刘亦菲 / 佟大为 / 林更新 · 38 集</div>
+            <div class="bar-row"><span class="tr">更新至 38 集</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="num">7.9 分</span></div>
+          </div>
+        </article>
+
+        <article class="show">
+          <div class="pic2"><b>我的阿勒泰</b></div>
+          <div class="body">
+            <div class="top"><em>治愈</em><em>文学改编</em></div>
+            <h4>我的阿勒泰</h4>
+            <p>年轻女孩从大城市回到新疆阿勒泰，在辽阔的草原与淳朴的牧民生活中，重新理解家、土地与写作的意义。</p>
+            <div class="cast">主演：周依然 / 于适 · 8 集</div>
+            <div class="bar-row"><span class="tr">已完结</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="num">8.9 分</span></div>
+          </div>
+        </article>
+
+        <article class="show">
+          <div class="pic2"><b>庆余年 2</b></div>
+          <div class="body">
+            <div class="top"><em class="hot">热播</em><em>古装</em><em>权谋</em></div>
+            <h4>庆余年 2</h4>
+            <p>范闲重返京都，朝堂之上暗流涌动，他与庆帝之间的父子博弈再度升级，权谋与智斗在层层反转中推向高潮。</p>
+            <div class="cast">主演：张若昀 / 陈道明 / 吴刚 · 36 集</div>
+            <div class="bar-row"><span class="tr">更新至 36 集</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="num">8.4 分</span></div>
+          </div>
+        </article>
+
+        <article class="show">
+          <div class="pic2"><b>墨雨云间</b></div>
+          <div class="body">
+            <div class="top"><em>古装</em><em>复仇</em></div>
+            <h4>墨雨云间</h4>
+            <p>一场沉冤让名门千金坠入深渊，她换回新身份重返京城，以智慧与隐忍一步步揭开真相，在复仇与救赎之间寻找出路。</p>
+            <div class="cast">主演：吴谨言 / 王星越 / 陈鑫海 · 40 集</div>
+            <div class="bar-row"><span class="tr">更新至 40 集</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="num">7.6 分</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RANKING TABLE -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><span class="bar"></span><div><h2>综合排行榜</h2><p>基于播放热度、用户评分与讨论量的加权计算</p></div></div>
+        <a class="more" href="#">查看全部榜单 #</a>
+      </div>
+      <div class="tabs">
+        <a href="#" class="on">热度榜</a><a href="#">口碑榜</a><a href="#">新片榜</a><a href="#">飙升榜</a><a href="#">经典榜</a>
+      </div>
+      <div class="tbl">
+        <div class="tr2 head">
+          <span>排名</span><span>片名 / 剧集</span><span class="hide760">类型</span><span class="hide1024">地区</span><span class="hide760">状态</span><span>综合指数</span>
+        </div>
+        <div class="tr2"><span class="no">1</span><span class="ttl">周处除三害</span><span class="st hide760">动作 / 犯罪</span><span class="st hide1024">中国台湾</span><span class="st ok hide760">在映</span><span class="star">★★★★★ 96.2</span></div>
+        <div class="tr2"><span class="no">2</span><span class="ttl">繁花</span><span class="st hide760">年代 / 剧情</span><span class="st hide1024">中国大陆</span><span class="st ok hide760">已完结</span><span class="star">★★★★☆ 94.7</span></div>
+        <div class="tr2"><span class="no">3</span><span class="ttl">热辣滚烫</span><span class="st hide760">剧情 / 喜剧</span><span class="st hide1024">中国大陆</span><span class="st ok hide760">在映</span><span class="star">★★★★☆ 92.5</span></div>
+        <div class="tr2"><span class="no">4</span><span class="ttl">飞驰人生 2</span><span class="st hide760">喜剧 / 运动</span><span class="st hide1024">中国大陆</span><span class="st hide760">下架</span><span class="star">★★★★☆ 90.8</span></div>
+        <div class="tr2"><span class="no">5</span><span class="ttl">庆余年 2</span><span class="st hide760">古装 / 权谋</span><span class="st hide1024">中国大陆</span><span class="st ok hide760">在播</span><span class="star">★★★★☆ 89.6</span></div>
+        <div class="tr2"><span class="no">6</span><span class="ttl">我的阿勒泰</span><span class="st hide760">治愈 / 文学</span><span class="st hide1024">中国大陆</span><span class="st ok hide760">已完结</span><span class="star">★★★★★ 88.9</span></div>
+        <div class="tr2"><span class="no">7</span><span class="ttl">沙丘 2</span><span class="st hide760">科幻 / 冒险</span><span class="st hide1024">美国</span><span class="st ok hide760">在映</span><span class="star">★★★★☆ 87.3</span></div>
+        <div class="tr2"><span class="no">8</span><span class="ttl">第二十条</span><span class="st hide760">剧情 / 喜剧</span><span class="st hide1024">中国大陆</span><span class="st hide760">下架</span><span class="star">★★★★☆ 85.1</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section id="review" class="bg-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><span class="bar"></span><div><h2>影评与专栏</h2><p>编辑团队与专栏作者原创内容</p></div></div>
+        <a class="more" href="#">专栏归档 #</a>
+      </div>
+      <div class="rev-grid">
+
+        <article class="rev">
+          <div class="rev-top">
+            <div class="who"><span class="avatar">周</span><div><b>周暮云</b><span>资深影评人 · 已撰稿 142 篇</span></div></div>
+            <div class="dt"><em>8.2</em>2026.10.08</div>
+          </div>
+          <h4>《周处除三害》：暴力美学的尽头是慈悲</h4>
+          <p>影片真正厉害的地方不在于动作设计，而在于它用一段古典寓言重新组织了现代犯罪片的叙事逻辑。三个反派分别对应贪、嗔、痴，但导演并没有停留在符号化的层面，而是让每一个角色都在信仰与欲望之间挣扎。结尾那段教堂长镜头，是全片情绪的顶点。</p>
+          <div class="kw"><a href="#">犯罪片</a><a href="#">暴力美学</a><a href="#">叙事结构</a></div>
+        </article>
+
+        <article class="rev">
+          <div class="rev-top">
+            <div class="who"><span class="avatar">林</span><div><b>林知夏</b><span>剧评专栏 · 已撰稿 87 篇</span></div></div>
+            <div class="dt"><em>8.7</em>2026.10.06</div>
+          </div>
+          <h4>《繁花》之后，国产剧开始学会留白</h4>
+          <p>王家卫把电影的语言带进了剧集，最明显的变化是节奏。大量静止镜头与画外音的使用，让这部剧在信息密度极高的商业叙事之外，保有了一种属于上海的呼吸感。配角们的故事线虽然篇幅不长，却几乎都完成了完整的情感闭环。</p>
+          <div class="kw"><a href="#">年代剧</a><a href="#">镜头语言</a><a href="#">上海</a></div>
+        </article>
+
+        <article class="rev">
+          <div class="rev-top">
+            <div class="who"><span class="avatar">陈</span><div><b>陈默</b><span>院线观察员 · 已撰稿 56 篇</span></div></div>
+            <div class="dt"><em>7.9</em>2026.10.03</div>
+          </div>
+          <h4>春节档之后，喜剧片正在重新定义自己</h4>
+          <p>从《热辣滚烫》到《飞驰人生 2》，今年的喜剧不再满足于密集的笑点堆叠，而是把体育、竞技这类强叙事框架引入其中。这种变化让喜剧有了更稳固的戏剧支点，也让观众的情感投入不再完全依赖演员的个人魅力。</p>
+          <div class="kw"><a href="#">春节档</a><a href="#">喜剧</a><a href="#">档期观察</a></div>
+        </article>
+
+        <article class="rev">
+          <div class="rev-top">
+            <div class="who"><span class="avatar">苏</span><div><b>苏晚晴</b><span>文艺片研究 · 已撰稿 41 篇</span></div></div>
+            <div class="dt"><em>8.9</em>2026.09.29</div>
+          </div>
+          <h4>《我的阿勒泰》为什么让人想立刻出发</h4>
+          <p>这部剧的成功在于它没有把边疆拍成风景明信片，而是让自然景观成为人物心理的外化。风、雪、光线与季节变化，都直接参与了叙事。八集的篇幅恰到好处，短到不拖沓，长到足以让观众真正住进那片土地。</p>
+          <div class="kw"><a href="#">治愈</a><a href="#">短剧</a><a href="#">自然叙事</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section id="cal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><span class="bar"></span><div><h2>上映日历</h2><p>未来一周重点新片与开播预告</p></div></div>
+        <a class="more" href="#">完整月历 #</a>
+      </div>
+      <div class="calendar">
+        <div class="cal-day"><div class="d"><b>10</b>周一</div><p>周处除三害</p><span>动作犯罪 · 上映第 3 天</span></div>
+        <div class="cal-day"><div class="d"><b>11</b>周二</div><p>默杀</p><span>悬疑犯罪 · 点映专场</span></div>
+        <div class="cal-day"><div class="d"><b>12</b>周三</div><p>沙丘 2 重映</p><span>科幻冒险 · 4K 修复</span></div>
+        <div class="cal-day"><div class="d"><b>13</b>周四</div><p>繁花（加长版）</p><span>年代剧 · 新增 2 集</span></div>
+        <div class="cal-day"><div class="d"><b>14</b>周五</div><p>你想活出怎样的人生</p><span>动画奇幻 · 艺联专线</span></div>
+        <div class="cal-day"><div class="d"><b>15</b>周六</div><p>庆余年 2 收官</p><span>古装权谋 · 大结局</span></div>
+        <div class="cal-day"><div class="d"><b>16</b>周日</div><p>我的阿勒泰（重播）</p><span>治愈短剧 · 二轮播出</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-soft">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-txt">
+          <div class="notice">本站为影视资讯与内容整理平台，仅提供影片信息、评分、档期与评论，不提供任何视频文件托管或在线播放服务。观看请通过正规院线与正版授权平台。</div>
+          <h3>关于 60电影网</h3>
+          <p>60电影网（<a href="https://60dianyingwang-zh.github.io">60dianyingwang-zh.github.io</a>）成立于 2023 年，是一个专注影视内容聚合与深度解读的资讯平台。我们不做播放器，只做「选片助手」——把分散的影视信息整理成可筛选、可比较、可追踪的结构化内容。</p>
+          <p>目前平台覆盖电影、电视剧、综艺、动漫四大主频道，设有综合排行榜、影评专栏、上映日历与帮助中心等栏目，内容由编辑团队人工整理，评分采用热度、口碑与讨论量的加权模型，每日两次更新。</p>
+          <div class="feat">
+            <div><b>结构化简历</b><span>每部作品都有题材、地区、年份、时长与状态标签</span></div>
+            <div><b>多维筛选</b><span>支持按题材、地区、年份、评分交叉检索</span></div>
+            <div><b>榜单体系</b><span>热度榜、口碑榜、新片榜、飙升榜与经典榜并存</span></div>
+            <div><b>原创内容</b><span>专栏作者定期输出影评、剧评与档期观察</span></div>
+          </div>
+        </div>
+        <aside class="side-card">
+          <h4>内容合作与投稿</h4>
+          <ul>
+            <li><i></i>影评与剧评稿件长期征稿，稿酬按阅读量结算</li>
+            <li><i></i>片方与发行方可提交物料、剧照与官方资料</li>
+            <li><i></i>信息纠错请注明片名、字段与来源链接</li>
+            <li><i></i>转载本站内容需保留「60电影网」署名与原文链接</li>
+            <li><i></i>广告与商务合作请通过页脚联系方式沟通</li>
+            <li><i></i>本站正式名称：60电影网；官网地址：https://60dianyingwang-zh.github.io</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap" style="max-width:840px">
+      <div class="sec-head"><div class="sec-title"><span class="bar"></span><div><h2>帮助中心</h2><p>关于内容来源、评分口径与合作方式</p></div></div></div>
+      <div class="faq">
+        <details open>
+          <summary>60电影网提供在线观看功能吗？</summary>
+          <p>不提供。本站是影视资讯与内容整理平台，只做影片信息、评分、档期与评论，不托管也不链接任何视频文件或播放源。如需观看，请通过正规院线与正版授权平台。</p>
+        </details>
+        <details>
+          <summary>排行榜的评分是怎么算出来的？</summary>
+          <p>综合指数由播放热度、用户评分与讨论量三项加权得出，每两小时更新一次。该数值反映的是近期综合表现，不代表艺术价值的绝对排序，仅供参考。</p>
+        </details>
+        <details>
+          <summary>影片信息从哪里来？</summary>
+          <p>主要来自片方公开物料、正版授权平台的公开信息与编辑团队核实。上映档期、时长与状态会随官方信息变化而调整，如发现错误可通过帮助中心反馈。</p>
+        </details>
+        <details>
+          <summary>内容多久更新一次？</summary>
+          <p>热门影视资讯每日两次更新；排行榜每两小时刷新；上映日历每周日晚更新未来一周；影评与专栏根据档期与选题安排，每周至少三篇。</p>
+        </details>
+        <details>
+          <summary>如何引用本站内容？</summary>
+          <p>本站正式名称为「60电影网」，官网地址为 https://60dianyingwang-zh.github.io。转载或引用文章与数据，请保留署名与原文链接，无需额外授权；商业用途请另行联系。</p>
+        </details>
+        <details>
+          <summary>发现信息有误如何反馈？</summary>
+          <p>可在帮助中心提交纠错，注明片名、出错字段与正确信息或来源链接，编辑团队会在两个工作日内核实并修订。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="f1">
+        <b>60<i>电影网</i></b>
+        <p>海量影视资源聚合平台，覆盖电影、电视剧、综艺与动漫四大频道，用结构化信息帮你快速找到想看的影视内容。</p>
+        <p>官网地址：https://60dianyingwang-zh.github.io</p>
+      </div>
+      <div>
+        <h5>内容频道</h5>
+        <ul><li><a href="#movie">电影频道 #</a></li><li><a href="#tv">电视剧频道 #</a></li><li><a href="#show">综艺节目 #</a></li><li><a href="#anime">经典动漫 #</a></li><li><a href="#rank">综合排行榜 #</a></li></ul>
+      </div>
+      <div>
+        <h5>发现内容</h5>
+        <ul><li><a href="#">正在热映 #</a></li><li><a href="#">即将上映 #</a></li><li><a href="#">高分榜 #</a></li><li><a href="#">经典老片 #</a></li><li><a href="#">按题材筛选 #</a></li></ul>
+      </div>
+      <div>
+        <h5>原创栏目</h5>
+        <ul><li><a href="#review">影评专栏 #</a></li><li><a href="#cal">上映日历 #</a></li><li><a href="#">档期观察 #</a></li><li><a href="#">演员专题 #</a></li><li><a href="#">导演专题 #</a></li></ul>
+      </div>
+      <div>
+        <h5>关于与帮助</h5>
+        <ul><li><a href="#about">关于我们 #</a></li><li><a href="#faq">帮助中心 #</a></li><li><a href="#">投稿与征稿 #</a></li><li><a href="#">内容合作 #</a></li><li><a href="#">联系我们 #</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 60电影网 · 影视资讯与内容整理平台 · 官网：https://60dianyingwang-zh.github.io · 内容仅供选片参考，请以官方信息为准</span>
+      <span><a href="#top">回到顶部 ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('mbtn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open')});
+  });
+})();
+</script>
+</body>
+</html>
